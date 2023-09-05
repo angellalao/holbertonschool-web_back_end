@@ -41,7 +41,7 @@ class Server:
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
         """returns dictionary containing information on page of data
-        from dataset """
+        from dataset. Pagination is deletion resilient """
         dataset = self.dataset()
         assert index <= len(dataset)
         next_index = index + page_size

@@ -12,6 +12,10 @@ export default class Pricing {
     this._currency = currency;
   }
 
+  displayFullPrice() {
+    return `${this.amount} ${this.currency.name} (${this.currency.code})`;
+  }
+
   static convertPrice(amount, conversionRate) {
     if (typeof amount !== 'number') {
       throw new TypeError('Amount must be a number.');
@@ -42,9 +46,5 @@ export default class Pricing {
 
   get currency() {
     return this._currency;
-  }
-
-  displayFullPrice() {
-    return `${this.amount} ${this.currency.name} ${(this.currency.code)}`;
   }
 }

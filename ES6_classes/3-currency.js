@@ -4,6 +4,10 @@ export default class Currency {
     this._name = name;
   }
 
+  displayFullCurrency() {
+    return `${this._name} (${this._code})`;
+  }
+
   set code(value) {
     this._code = value;
   }
@@ -18,9 +22,5 @@ export default class Currency {
 
   get name() {
     return this._name;
-  }
-
-  displayFullCurrency() {
-    return `${this._name} (${this._code}).`;
   }
 }
